@@ -58,3 +58,13 @@ Check on browser 127.0.0.1:8000/docs
 
 Check via curl command also
 
+Now Go to Grafana and check the logs, metrics and traces
+
+![image](https://github.com/user-attachments/assets/a1c1a707-80e7-4c6d-aad5-0931b3d4c5c6)
+
+![image](https://github.com/user-attachments/assets/7cbc2528-a61c-44fd-a53a-1a949cf93ec6)
+
+![image](https://github.com/user-attachments/assets/1307c895-2694-4eb3-a208-002f9de75207)
+
+
+
