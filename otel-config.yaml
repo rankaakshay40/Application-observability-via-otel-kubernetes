@@ -70,7 +70,7 @@ data:
         logs:
           receivers: [otlp]
           processors: [batch]
-          exporters: [debug, otlphttp/loki]	
+          exporters: [otlphttp/loki]	
 ---
 apiVersion: v1
 kind: Service
