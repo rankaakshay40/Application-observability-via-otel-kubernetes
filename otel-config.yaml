@@ -42,7 +42,8 @@ data:
         tls:
           insecure: true
       otlp/tempo:
-        endpoint: http://10.132.143.56:4317
+        #endpoint: http://10.132.143.56:4317
+        #endpoint: http://10.132.143.56:4320 
         tls:
           insecure: true	    
       prometheusremotewrite:
@@ -149,8 +150,11 @@ spec:
         volumeMounts:
         - name: otel-collector-config-vol
           mountPath: /conf
-#        - name: otel-collector-secrets
+ #      - name: otel-collector-secrets
 #          mountPath: /secrets
+        - name: tempo-ca-volume
+          mountPath: /home/ec2-user/Tempo_auth   # copy the tempo cert file and paste it in this instance at this LOCATION
+          readOnly: true
       volumes:
         - configMap:
             name: otel-collector-conf
@@ -158,4 +162,6 @@ spec:
               - key: otel-collector-config
                 path: otel-collector-config.yaml
           name: otel-collector-config-vol
-
+        - name: tempo-ca-volume
+          secret:                                # create the secret
+            secretName: tempo-ca-cert
