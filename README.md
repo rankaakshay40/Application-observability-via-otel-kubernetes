@@ -38,6 +38,11 @@ kubectl port-forward svc/node-exporter-prometheus-node-exporter 9100
 
 Check on browser: 127.0.0.1/metrics and we will see the metrics
 
+for Tempo which is authenticated, we need tempo.crt file in the kubernetes cluster and we need to mount the voiumes, we will create the secret for this
+
+kubectl create secret generic tempo-ca-cert --from-file=tempo-ca-crt=/home/ec2-user/Tempo_auth/tempo.crt -n xmon
+
+
 
 Now make a folder named *Opentelemetry* inside that we should have our otel-config file 
 
