@@ -54,6 +54,11 @@ Now run the port forward command for application again to see our agent is forwa
 
 kubectl port-forward svc/single-app-single-collector 8000:8000
 
+OR
+
+kubectl port-forward --address localhost,10.19.21.23 Svc/single-app-single-collector 8000:8000  ## for the machine the application is hosted on.
+ 
+
 Check on browser 127.0.0.1:8000/docs
 
 Check via curl command also
